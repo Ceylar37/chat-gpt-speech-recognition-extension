@@ -1,0 +1,21 @@
+{
+	"name": "chat-gpt-speech-recognition",
+	"description": "Позволяет диктовать сообщения для chat-gpt",
+	"version": "0.0.1",
+	"manifest_version": 3,
+	"icons": {
+	},
+	"action": {
+	},
+	"permissions": ["scripting"],
+	"host_permissions": [
+		"https://chat.openai.com/*"
+	],
+	"content_scripts": [
+		{
+			"matches": ["https://chat.openai.com/*"],
+			"js": ["speech.js"],
+			"run_at": "document_start"
+		}
+	]
+}
